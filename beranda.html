@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda Admin - Fitur Lengkap</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth; 
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0047AB; 
+            color: #4A4A4A;
+        }
+        header {
+            background-color: #0047AB; 
+            color: white;
+            padding: 15px 30px;
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FFF0F5; 
+        }
+        .btn-logout {
+            background-color: #A52A2A; 
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px; 
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-logout:hover {
+            background-color: #8B008B;
+        }
+
+        
+        section {
+            padding: 120px 40px 80px 40px; 
+            min-height: 100vh; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            color: #1B2A49; 
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+        .garis-bawah {
+            width: 60px;
+            height: 4px;
+            background-color: #191970;
+            margin: 0 auto 30px auto;
+            border-radius: 2px;
+        }
+
+        
+        .profil-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+        .card {
+            background: lightyellow;
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+            border-top: 4px solid #FFC000;
+        }
+
+        
+        .upload-btn {
+            background-color: #353935;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: background 0.3s;
+        }
+        .upload-btn:hover {
+            background-color: #008080;
+        }
+        #fileInput {
+            display: none; 
+        }
+        .galeri-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1100px;
+        }
+        .galeri-item {
+            width: 250px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background-color: #F0FFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #353935;
+        }
+        .galeri-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        .kontak-info {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(93, 63, 211, 0.15); 
+            border-left: 5px solid #6495ED; 
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU NAVIGASI (Ketentuan: Klik otomatis menuju bagian masing-masing) -->
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#profil">Profil</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+        <button class="btn-logout" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- 1. HALAMAN HOME -->
+    <section id="home" style="background-color: #ffffff;">
+        <h2>Selamat Datang</h2>
+        <div class="garis-bawah"></div>
+        <p style="font-size: 1.2rem; max-width: 600px;">
+            Selamat datang di Halaman Utama. Anda telah berhasil masuk dan sistem siap digunakan.
+        </p>
+    </section>
+
+    <!-- 2. HALAMAN PROFIL -->
+    <section id="profil" style="background-color: #F0FFFF;">
+        <h2>Profil Virgiawan</h2>
+        <div class="garis-bawah"></div>
+        <p style="max-width: 700px; line-height: 1.6;">
+            Website Admin ini dikelola oleh Virgiawan.
+        </p>
+        
+        <div class="profil-container">
+<div class="card">
+                <h3 style="color: #191970; margin-top: 0;">🎯 Profil</h3>
+                <p>Menjadi pusat kendali data yang mudah diakses kapan saja.</p>
+            </div>
+            
+               
+            <div class="card">
+                <h3 style="color: #191970; margin-top: 0;">👥 Pengelola</h3>
+                <p><strong></strong> Virgiawan Chairul Adzam </p>
+<p><strong></strong> X Kimia Industri </p>
+<p><strong></strong> SMKS WIRASABA KARAWANG </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HALAMAN GALERI (Ketentuan: Admin bisa menambah foto) -->
+    <section id="galeri" style="background-color: #ffffff;">
+        <h2>Galeri Foto</h2>
+        <div class="garis-bawah"></div>
+        <p style="margin-bottom: 20px;">Silakan klik tombol di bawah untuk mengunggah foto baru ke dalam galeri:</p>
+        
+        <!-- Tombol Tambah Foto -->
+        <label for="fileInput" class="upload-btn">➕ Tambah Foto Baru</label>
+        <input type="file" id="fileInput" accept="image/*" onchange="tambahFoto(event)">
+
+        <!-- Wadah Gambar -->
+        <div class="galeri-grid" id="wadahGaleri">
+            <!-- Foto bawaan pertama sebagai contoh awal -->
+            <div class="galeri-item">
+                <span style="color: #353935; font-weight: bold;">Belum ada foto</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. HALAMAN KONTAK -->
+    <section id="kontak" style="background-color: #F0FFFF;">
+        <h2>Kontak Admin </h2>
+        <div class="garis-bawah"></div>
+        <p>Hubungi Virgi jika Ada kendala dan butuh bantuan:</p>
+        
+        <div class="kontak-info">
+            <p>✉️ <strong>Email Admin:</strong> virgiawanchoirula@gmail.com</p>
+            <p>📞 <strong>Kontak Telepon:</strong> 0897-8880-889</p>
+            <p>📍 <strong>Alamat Sekolah : Jl. Syech Quro No.74, Desa Pasir Jengkol, Kec.Majalaya, Karawang, Jawa Barat</p>
+        </div>
+    </section>
+
+    <!-- KETERANGAN JAVASCRIPT: Logika Sistem -->
+    <script>
+       
+        function tambahFoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const wadah = document.getElementById('wadahGaleri');
+                    
+                    // Menghapus tulisan "Belum ada foto" jika ini adalah foto pertama yang dimasukkan
+                    if(wadah.innerHTML.includes("Belum ada foto")) {
+                        wadah.innerHTML = "";
+                    }
+
+                    // Membuat elemen kotak foto baru
+                    const kotakBaru = document.createElement('div');
+                    kotakBaru.className = 'galeri-item';
+                    
+                    // Memasukkan gambar di dalamnya
+                    const gambar = document.createElement('img');
+                    gambar.src = e.target.result;
+                    
+                    kotakBaru.appendChild(gambar);
+                    wadah.appendChild(kotakBaru);
+                }
+                
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Fungsi Logout
+        function logout() {
+            alert('Logout berhasil');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+</html>

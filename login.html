@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin</title>
+    <style>
+        /* KETERANGAN CSS: Mengatur tampilan halaman login agar serasi dengan beranda */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #A7C7E7; /* Disamakan dengan warna latar belakang beranda (Soft Pink) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* KETERANGAN CSS: Ukuran kotak login diperkecil (dari 300px menjadi 240px) */
+        .login-container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15); /* Bayangan pink tipis seperti di beranda */
+            width: 240px; 
+            text-align: center;
+            border-top: 4px solid #4169E1; /* Aksen garis atas khas tema beranda */
+        }
+        
+        /* KETERANGAN CSS: Mengatur judul tulisan LOGIN ADMIN tepat di tengah */
+        h2 {
+            margin: 0 0 5px 0;
+            color: #1B2A49; /* Menggunakan Deep Pink */
+            font-size: 1.5rem;
+        }
+        .garis-bawah {
+            width: 40px;
+            height: 3px;
+            background-color: #0F52BA;
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+        }
+
+        /* KETERANGAN CSS: Mengatur grup input agar teks label ikut ke tengah */
+        .input-group {
+            margin-bottom: 15px;
+            text-align: center; /* Membuat label dan teks di dalam input rata tengah */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+            font-size: 0.9rem;
+        }
+        
+        /* KETERANGAN CSS: Membuat teks ketikan username & password berada di posisi tengah */
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 2px solid #A7C7E7; /* Warna bingkai Khaki */
+            border-radius: 20px; /* Membuat kotak input melengkung rapi (oval) */
+            text-align: center; /* Teks yang diketik otomatis di tengah */
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #0F52BA; /* Bingkai berubah bright blue saat diklik */
+        }
+        
+        /* KETERANGAN CSS: Tombol login bertema pink bulat modern */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6F8FAF; /* Hot Pink */
+            color: white;
+            border: none;
+            border-radius: 20px; /* Tombol elips/lonjong modern */
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0000FF; /* Blue saat disentuh mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- KETERANGAN HTML: Form Login Admin Ukuran Kecil & Rata Tengah -->
+    <div class="login-container">
+        <h2>LOGIN ADMIN</h2>
+        <div class="garis-bawah"></div>
+        
+        <form id="loginForm">
+            <!-- Input Username -->
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required placeholder="Masukkan usn">
+            </div>
+            
+            <!-- Input Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Masukkan pw">
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- KETERANGAN JAVASCRIPT: Logika Validasi Login (Tetap menggunakan data bawaan) -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            // Ketentuan Login (Username: admin, Password: 12345)
+            if (usernameInput === 'admin' && passwordInput === '12345') {
+                alert('Login Berhasil'); 
+                window.location.href = 'beranda.html'; 
+            } else {
+                alert('Username atau Password Salah'); 
+            }
+        });
+    </script>
+
+</body>
+</html>
